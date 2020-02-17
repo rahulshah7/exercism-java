@@ -1,10 +1,27 @@
-/*
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
-Since this exercise has a difficulty of > 4 it doesn't come
-with any starter implementation.
-This is so that you get to practice creating classes and methods
-which is an important part of programming in Java.
+class Anagram {
+    char[] characters;
 
-Please remove this comment when submitting your solution.
+    Anagram(String word) {
+        this.characters = word.toLowerCase().toCharArray();
+    }
 
-*/
+    List<String> match(List<String> words) {
+        List<String> anagramList = new ArrayList<>();
+        for (String word : words) {
+            char[] characters = word.toLowerCase().toCharArray();
+
+            if (!(Arrays.equals(this.characters, characters))) {
+                Arrays.sort(this.characters);
+                Arrays.sort(characters);
+                if (Arrays.equals(this.characters, characters)) {
+                    anagramList.add(word);
+                }
+            }
+        }
+        return anagramList;
+    }
+}
