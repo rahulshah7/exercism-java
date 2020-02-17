@@ -1,12 +1,26 @@
+import java.util.ArrayList;
+
 class IsogramChecker {
 
     boolean isIsogram(String phrase) {
-        phrase = phrase.toLowerCase();
-        if (phrase.isEmpty())
+        if (phrase.isEmpty()) {
             return true;
+        }
 
-        return false;
+        phrase = phrase.toLowerCase();
+        ArrayList<Character> letters = new ArrayList<>();
+        for (char character : phrase.toCharArray()) {
+            if (character >= 'a' && character <= 'z') {
+                if (letters.contains(character)) {
+                    return false;
+                }
+                letters.add(character);
+            }
+        }
+
+        return true;
     }
+
 }
 
 /* Solve using streams */
