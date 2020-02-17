@@ -30,10 +30,7 @@ class IsogramChecker {
 // is isogram if
 // #count stream and #count distinct stream
 
-/* Solve using loops and Arrays.sort */
-// create letters array
-// loop over phrase and copy chars to letters array
-// sort letters array
-// loop over letters from 1 to length
-// if i - 1 == i return false
-// return true by default
+/* Solve using Hash maps */
+// create Hash map. Keys are chars a to z, values = 0;
+// loop over phrase chars a to z and increment Hash map value
+// return false if hashmap value > 1
