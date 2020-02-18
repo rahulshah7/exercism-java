@@ -3,10 +3,13 @@ import java.util.Arrays;
 import java.util.List;
 
 class Anagram {
+    String word;
     char[] characters;
 
     Anagram(String word) {
+        this.word = word;
         this.characters = word.toLowerCase().toCharArray();
+        Arrays.sort(this.characters);
     }
 
     List<String> match(List<String> words) {
@@ -14,8 +17,7 @@ class Anagram {
         for (String word : words) {
             char[] characters = word.toLowerCase().toCharArray();
 
-            if (!(Arrays.equals(this.characters, characters))) {
-                Arrays.sort(this.characters);
+            if (!(this.word.toLowerCase().equals(word.toLowerCase()))) {
                 Arrays.sort(characters);
                 if (Arrays.equals(this.characters, characters)) {
                     anagramList.add(word);

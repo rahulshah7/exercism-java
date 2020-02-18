@@ -27,3 +27,7 @@ hs_err_pid*
 **/.project
 **/.settings/
 **/build
+
+# Code editor config files
+**/.idea/
+**/.vscode/
