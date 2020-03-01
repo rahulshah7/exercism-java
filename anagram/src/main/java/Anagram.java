@@ -15,9 +15,9 @@ class Anagram {
     List<String> match(List<String> words) {
         List<String> anagramList = new ArrayList<>();
         for (String word : words) {
-            char[] characters = word.toLowerCase().toCharArray();
-
-            if (!(this.word.toLowerCase().equals(word.toLowerCase()))) {
+            boolean isWordEqual = this.word.toLowerCase().equals(word.toLowerCase());
+            if (!isWordEqual) {
+                char[] characters = word.toLowerCase().toCharArray();
                 Arrays.sort(characters);
                 if (Arrays.equals(this.characters, characters)) {
                     anagramList.add(word);
