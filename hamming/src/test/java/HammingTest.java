@@ -1,4 +1,3 @@
-import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
@@ -36,7 +35,6 @@ public class HammingTest {
         assertEquals(9, new Hamming("GGACGGATTCTG", "AGGACGGATTCT").getHammingDistance());
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testValidatesFirstStrandNotLonger() {
         expectedException.expect(IllegalArgumentException.class);
@@ -45,7 +43,6 @@ public class HammingTest {
         new Hamming("AATG", "AAA");
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testValidatesSecondStrandNotLonger() {
         expectedException.expect(IllegalArgumentException.class);
@@ -54,7 +51,6 @@ public class HammingTest {
         new Hamming("ATA", "AGTG");
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testDisallowLeftEmptyStrand() {
         expectedException.expect(IllegalArgumentException.class);
@@ -63,7 +59,6 @@ public class HammingTest {
         new Hamming("", "G");
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testDisallowRightEmptyStrand() {
         expectedException.expect(IllegalArgumentException.class);
