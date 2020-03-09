@@ -4,7 +4,7 @@ import java.time.LocalDateTime;
 
 public class Gigasecond {
     private static final Duration GIGA_SECOND = Duration.ofSeconds(1_000_000_000);
-    private LocalDateTime moment;
+    private final LocalDateTime moment;
 
     public Gigasecond(LocalDate moment) {
         validateMomentParameterNotNull(moment);
