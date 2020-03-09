@@ -7,13 +7,17 @@ public class Scrabble {
 
     public Scrabble(String word) {
        this.word = word.toUpperCase();
+       calculateWordScore();
     }
 
     public int getScore() {
+        return score;
+    }
+
+    private void calculateWordScore() {
         for (int i = 0; i < this.word.length(); i++) {
             score += letterScores.get(this.word.charAt(i));
         }
-        return score;
     }
 
     private static HashMap<Character, Integer> initLetterScores() {
