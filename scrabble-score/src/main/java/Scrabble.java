@@ -6,7 +6,7 @@ public class Scrabble {
     private int score;
 
     public Scrabble(String word) {
-       this.word = word.toUpperCase();
+       this.word = word;
        calculateWordScore();
     }
 
@@ -16,7 +16,7 @@ public class Scrabble {
 
     private void calculateWordScore() {
         for (int i = 0; i < this.word.length(); i++) {
-            score += letterScores.get(this.word.charAt(i));
+            score += letterScores.get(Character.toUpperCase(this.word.charAt(i)));
         }
     }
 
