@@ -1,22 +1,20 @@
 import java.util.HashMap;
 
 public class Scrabble {
-    private static final HashMap<Character, Integer> letterScores = initLetterScores();
-    private final String word;
     private int score;
 
     public Scrabble(String word) {
-       this.word = word;
-       calculateWordScore();
+       calculateWordScore(word);
     }
 
     public int getScore() {
         return score;
     }
 
-    private void calculateWordScore() {
-        for (int i = 0; i < this.word.length(); i++) {
-            score += letterScores.get(Character.toUpperCase(this.word.charAt(i)));
+    private void calculateWordScore(String word) {
+        final HashMap<Character, Integer> letterScores = initLetterScores();
+        for (int i = 0; i < word.length(); i++) {
+            score += letterScores.get(Character.toUpperCase(word.charAt(i)));
         }
     }
 
